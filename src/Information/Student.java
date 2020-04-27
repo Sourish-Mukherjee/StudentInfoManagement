@@ -1,6 +1,5 @@
 package Information;
 
-
 public class Student {
 
     private String name, usn, sec, branch;
@@ -71,7 +70,7 @@ public class Student {
     public String toString() {
         return ("Name : " + this.getName() + " USN : " + this.getUsn()
                 + " Year: " + this.getYear() + System.lineSeparator() + "Branch : " + this.getBranch()
-                + " Semester : " + this.getSem()+" Section : "+this.getSec());
+                + " Semester : " + this.getSem() + " Section : " + this.getSec());
     }
 
 }
