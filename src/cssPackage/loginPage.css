@@ -1,0 +1,7 @@
+#button{
+    -fx-font-size: 20px;
+    -fx-background-color: rgb(0,0,0);
+    -fx-text-fill:aquamarine;
+    -fx-padding: 6 6 6 6;
+    -fx-border-radius:24;
+}
