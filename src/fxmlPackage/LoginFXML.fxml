@@ -10,9 +10,10 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.LoginController">
    <children>
       <PasswordField id="passtextBox" fx:id="passtextBox" alignment="CENTER" layoutX="311.0" layoutY="260.0" promptText="Password" style="-fx-border-color: #FFFFFF;" />
-      <Button id="button" fx:id="button" contentDisplay="CENTER" layoutX="363.0" layoutY="338.0" mnemonicParsing="false" onAction="#generateNumber" text="Login" />
-      <Text layoutX="303.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 36;" text="Login Portal" textAlignment="CENTER" wrappingWidth="167.732421875" />
+      <Button id="button" fx:id="button" contentDisplay="CENTER" layoutX="284.0" layoutY="335.0" mnemonicParsing="false" onAction="#generateNumber" text="Login" />
+      <Text layoutX="303.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 36;" text="Login Portal" textAlignment="CENTER" wrappingWidth="167.732421875" />
       <TextField id="emaiLTextbox" fx:id="emaiLTextbox" alignment="CENTER" layoutX="311.0" layoutY="202.0" promptText="Email ID" style="-fx-border-color: #FFFFFF;" />
       <Label id="textBox" fx:id="textBox" layoutX="25.0" layoutY="94.0" prefHeight="205.0" prefWidth="189.0" />
+      <Button id="register_button" fx:id="register_button" layoutX="463.0" layoutY="335.0" mnemonicParsing="false" onAction="#createAccount" text="Register" />
    </children>
 </AnchorPane>
