@@ -8,13 +8,14 @@ import javafx.stage.Stage;
 
 public class LoginMainClass extends Application {
 
+    private Stage window;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         Parent pr = FXMLLoader.load(getClass().getResource("/fxmlPackage/LoginFXML.fxml"));
         Scene scene = new Scene(pr);
-        scene.getStylesheets().add(getClass().getResource("/cssPackage/loginPage.css").toExternalForm());
-        primaryStage.setTitle("Student DashBoard!");
+        //scene.getStylesheets().add(getClass().getResource("/cssPackage/loginPage.css").toExternalForm());
+        primaryStage.setTitle("Login DashBoard!");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -22,6 +23,14 @@ public class LoginMainClass extends Application {
 
     public static void main(String args[]) {
         launch(args);
+    }
+
+    public Stage getWindow() {
+        return window;
+    }
+
+    public void setWindow(Stage window) {
+        this.window = window;
     }
 
 }

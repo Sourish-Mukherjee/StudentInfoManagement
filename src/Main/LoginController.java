@@ -1,13 +1,18 @@
 package Main;
 
 import DataBase.DataBaseHelper;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -17,25 +22,24 @@ public class LoginController {
     private PasswordField passtextBox;
     @FXML
     private TextField emaiLTextbox;
+    @FXML
+    private Button register_button;
 
     @FXML
     public void generateNumber(ActionEvent event) {
         try {
-            textBox.setText("Logged In!");
-            DataBaseHelper dataBaseHelper = new DataBaseHelper();
-            dataBaseHelper.useDataBase("RegisterPortal");
-            ResultSet res = (dataBaseHelper.getStatement().executeQuery("SELECT  COUNT(EmailID) from Data where "
-                    + "EmailID = '" + emaiLTextbox.getText() + "';"));
-            res.next();
-            int n = res.getInt(1);
-            if (n == 0) {
+            DataBaseHelper db = new DataBaseHelper();
+            RegisterFXMLController rg = new RegisterFXMLController();
+            rg.createDataTable(db);
+            boolean check = rg.checkIfEmailExists(db, emaiLTextbox.getText());
+            if (!check) {
                 textBox.setText("No EmailID found in Database!");
             } else {
-                res = dataBaseHelper.getStatement().executeQuery("SELECT Password from Data where "
+                ResultSet res = db.getStatement().executeQuery("SELECT Password from Data where "
                         + "EmailID = '" + emaiLTextbox.getText() + "';");
                 res.next();
                 if (res.getString(1).equals(passtextBox.getText())) {
-                    textBox.setText("LoggedIn!");
+                    textBox.setText("LoggedIn Succesfully!");
                 } else {
                     textBox.setText("Password Wrong!");
                 }
@@ -47,19 +51,8 @@ public class LoginController {
     }
 
     @FXML
-    public void createAccount(ActionEvent event) {
-        if (!emaiLTextbox.getText().isEmpty() && !passtextBox.getText().isEmpty()) {
-            try {
-                DataBaseHelper db = new DataBaseHelper();
-                db.createDatabase("RegisterPortal");
-                db.useDataBase("RegisterPortal");
-                db.createTable("Data", "ID INT NOT NULL AUTO_INCREMENT ,EmailID VARCHAR(40), Password VARCHAR(20),PRIMARY KEY(ID)");
-                db.getStatement().executeUpdate("Insert into Data (EmailID, Password) values ('" + emaiLTextbox.getText() + "', '" + passtextBox.getText() + "');");
-                textBox.setText("Registered!");
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-
-        }
+    public void createAccount(ActionEvent event) throws IOException {
+        Stage stage = (Stage) register_button.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/RegisterFXML.fxml"))));
     }
 }
