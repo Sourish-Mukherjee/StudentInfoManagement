@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class LoginMainClass extends Application {
+public class Main extends Application {
 
     private Stage window;
 
@@ -15,7 +15,7 @@ public class LoginMainClass extends Application {
         Parent pr = FXMLLoader.load(getClass().getResource("/fxmlPackage/LoginFXML.fxml"));
         Scene scene = new Scene(pr);
         //scene.getStylesheets().add(getClass().getResource("/cssPackage/loginPage.css").toExternalForm());
-        primaryStage.setTitle("Login DashBoard!");
+        primaryStage.setTitle("Login Portal!");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();

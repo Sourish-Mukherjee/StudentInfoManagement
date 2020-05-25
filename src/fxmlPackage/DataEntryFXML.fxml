@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane id="studentPane_DataEntry" fx:id="studentPane_DataEntry" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StudentEntryFXMLController">
+   <children>
+      <TextField id="name_stuEntry" fx:id="name_stuEntry" alignment="CENTER" layoutX="300.0" layoutY="35.0" promptText="Name" />
+      <TextField id="usn_stuEntry" fx:id="usn_stuEntry" alignment="CENTER" layoutX="300.0" layoutY="90.0" promptText="USN" />
+      <TextField id="pho_stuEntry" fx:id="pho_stuEntry" alignment="CENTER" layoutX="300.0" layoutY="148.0" promptText="Phone No." />
+      <TextField id="branch_stuEntry" fx:id="branch_stuEntry" alignment="CENTER" layoutX="300.0" layoutY="209.0" promptText="Branch" />
+      <TextField id="year_stuEntry" fx:id="year_stuEntry" alignment="CENTER" layoutX="300.0" layoutY="269.0" promptText="Year" />
+      <Button id="save_StuEntry" fx:id="save_StuEntry" layoutX="302.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Save" />
+      <Label id="label_stuEntry" fx:id="label_stuEntry" alignment="CENTER" layoutX="36.0" layoutY="81.0" prefHeight="227.0" prefWidth="170.0" text="Label">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
