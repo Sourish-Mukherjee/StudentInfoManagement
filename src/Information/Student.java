@@ -2,20 +2,16 @@ package Information;
 
 public class Student {
 
-    private String name, usn, sec, branch;
-    private int year, sem;
+    private String name, usn, phone, branch, email;
+    private int year;
 
-    public Student() {
-        this("", "", "", "", 0, 0);
-    }
-
-    public Student(String name, String usn, String branch, String sec, int year, int sem) {
+    public Student(String name, String usn, String phone, String branch, String email, int year) {
         this.name = name;
         this.usn = usn;
-        this.sec = sec;
-        this.year = year;
-        this.sem = sem;
+        this.phone = phone;
         this.branch = branch;
+        this.email = email;
+        this.year = year;
     }
 
     public String getName() {
@@ -34,28 +30,12 @@ public class Student {
         this.usn = usn;
     }
 
-    public String getSec() {
-        return sec;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setSec(String sec) {
-        this.sec = sec;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getSem() {
-        return sem;
-    }
-
-    public void setSem(int sem) {
-        this.sem = sem;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getBranch() {
@@ -66,11 +46,20 @@ public class Student {
         this.branch = branch;
     }
 
-    @Override
-    public String toString() {
-        return ("Name : " + this.getName() + " USN : " + this.getUsn()
-                + " Year: " + this.getYear() + System.lineSeparator() + "Branch : " + this.getBranch()
-                + " Semester : " + this.getSem() + " Section : " + this.getSec());
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
 }
