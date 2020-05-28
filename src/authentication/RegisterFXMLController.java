@@ -25,8 +25,7 @@ public class RegisterFXMLController {
     @FXML
     private Label register_status_label;
     @FXML
-    private CheckBox fac_checkBox,
-            stu_checkBox;
+    private CheckBox fac_checkBox;
 
     @FXML
     public void registerAccount(ActionEvent event) throws IOException {

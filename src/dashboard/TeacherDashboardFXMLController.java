@@ -94,7 +94,7 @@ public class TeacherDashboardFXMLController implements Initializable {
     }
 
     @FXML
-    private void updateRegisterTable() throws SQLException {
+    protected void updateRegisterTable() throws SQLException {
         DataBaseHelper db = new DataBaseHelper();
         db.useDataBase("RegisterPortal");
         String oldEmail = table_teacDashboard.getSelectionModel().getSelectedItem().getEmail();

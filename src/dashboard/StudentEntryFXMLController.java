@@ -20,7 +20,7 @@ public class StudentEntryFXMLController {
     private Label label_stuEntry;
 
     @FXML
-    private void onSave() throws SQLException {
+    protected void onSave() throws SQLException {
         DataBaseHelper db = new DataBaseHelper();
         createTableForStudentDetails(db);
         enterDataInStudentDetails(db);

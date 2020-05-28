@@ -32,10 +32,10 @@ public class LoginController implements Initializable {
     private Button register_button;
     @FXML
     private ComboBox comboBox_Login;
-    private static String emailTyped = "world";
+    private static String emailTyped = "";
 
     @FXML
-    public void generateNumber(ActionEvent event) throws IOException {
+    protected void generateNumber() throws IOException {
         emailTyped = emaiLTextbox.getText();
         try {
             DataBaseHelper db = new DataBaseHelper();
