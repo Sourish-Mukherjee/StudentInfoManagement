@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Administrator/Downloads/SOURISH/StudentInfoManagement/src/Dashboard/StudentEntryFXMLController.java</file>
-            <file>file:/C:/Users/Administrator/Downloads/SOURISH/StudentInfoManagement/src/Authentication/LoginController.java</file>
-            <file>file:/C:/Users/Administrator/Downloads/SOURISH/StudentInfoManagement/src/Authentication/RegisterFXMLController.java</file>
+            <file>file:/C:/Users/Administrator/Downloads/SOURISH/StudentInfoManagement/src/fxmlPackage/LoginFXML.fxml</file>
+            <file>file:/C:/Users/Administrator/Downloads/SOURISH/StudentInfoManagement/src/cssPackage/loginPage.css</file>
+            <file>file:/C:/Users/Administrator/Downloads/SOURISH/StudentInfoManagement/src/Main/Main.java</file>
         </group>
     </open-files>
 </project-private>

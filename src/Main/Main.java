@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent pr = FXMLLoader.load(getClass().getResource("/fxmlPackage/LoginFXML.fxml"));
         Scene scene = new Scene(pr);
-        //scene.getStylesheets().add(getClass().getResource("/cssPackage/loginPage.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/cssPackage/loginPage.css").toExternalForm());
         primaryStage.setTitle("Login Portal!");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
