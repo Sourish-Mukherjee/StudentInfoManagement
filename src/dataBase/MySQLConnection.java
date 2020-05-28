@@ -1,4 +1,4 @@
-package DataBase;
+package dataBase;
 
 import java.sql.*;
 
@@ -10,19 +10,18 @@ public class MySQLConnection {
     private String password = "";
     private String tableName = "";
     private String databaseName = "";
-    private Connection conn = null;
     private Statement st = null;
 
     protected MySQLConnection() {
     }
 
-    protected MySQLConnection(String databaseName) {
+    protected MySQLConnection(String databaseName) throws Exception {
         this("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3306/" + databaseName,
                 "root", "123456");
     }
 
     protected MySQLConnection(String driverName, String url, String userName,
-            String password) {
+            String password) throws Exception {
         this.driverName = driverName;
         this.url = url;
         this.userName = userName;
@@ -30,19 +29,16 @@ public class MySQLConnection {
         createConnection();
     }
 
-    protected final void createConnection() {
+    protected final void createConnection() throws Exception {
+        Connection conn;
         try {
             Class.forName(driverName);
             conn = DriverManager.getConnection(url, userName, password);
+            st = conn.createStatement();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Server Could Not Be Connected!");
             System.out.println(e.getMessage());
-        }
-        try {
-            st = conn.createStatement();
-        } catch (SQLException e) {
-            System.out.println("Statement Connection Failed!");
-            System.out.println(e.getMessage());
+            throw new Exception("Error in createConnection Method");
         }
     }
 

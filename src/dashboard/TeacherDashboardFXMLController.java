@@ -1,8 +1,8 @@
-package Dashboard;
+package dashboard;
 
-import Authentication.RegisterFXMLController;
-import DataBase.DataBaseHelper;
-import Information.Student;
+import authentication.RegisterFXMLController;
+import dataBase.DataBaseHelper;
+import information.Student;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -98,7 +98,6 @@ public class TeacherDashboardFXMLController implements Initializable {
     private void updateRegisterTable() throws SQLException {
         DataBaseHelper db = new DataBaseHelper();
         db.useDataBase("RegisterPortal");
-        TablePosition pos = table_teacDashboard.getSelectionModel().getSelectedCells().get(0);
         String oldEmail = table_teacDashboard.getSelectionModel().getSelectedItem().getEmail();
         String newName = table_editName.getText();
         String newEmail = table_editEmail.getText();

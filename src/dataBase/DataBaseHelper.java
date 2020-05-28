@@ -1,4 +1,4 @@
-package DataBase;
+package dataBase;
 
 import java.sql.SQLException;
 import java.sql.Statement;

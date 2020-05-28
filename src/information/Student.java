@@ -1,8 +1,12 @@
-package Information;
+package information;
 
 public class Student {
 
-    private String name, usn, phone, branch, email;
+    private String name, 
+            usn, 
+            phone, 
+            branch, 
+            email;
     private int year;
 
     public Student(String name, String usn, String phone, String branch, String email, int year) {

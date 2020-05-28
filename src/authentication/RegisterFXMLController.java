@@ -1,7 +1,7 @@
-package Authentication;
+package authentication;
 
-import Dashboard.StudentEntryFXMLController;
-import DataBase.DataBaseHelper;
+import dashboard.StudentEntryFXMLController;
+import dataBase.DataBaseHelper;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,11 +20,13 @@ public class RegisterFXMLController {
     @FXML
     private TextField email_register_textfield;
     @FXML
-    private PasswordField register_password, register_repassword;
+    private PasswordField register_password,
+            register_repassword;
     @FXML
     private Label register_status_label;
     @FXML
-    private CheckBox fac_checkBox, stu_checkBox;
+    private CheckBox fac_checkBox,
+            stu_checkBox;
 
     @FXML
     public void registerAccount(ActionEvent event) throws IOException {
@@ -39,7 +41,7 @@ public class RegisterFXMLController {
                     db.getStatement().executeUpdate("Insert into Data (EmailID, Password, Type) values ('" + email_register_textfield.getText()
                             + "', '" + register_password.getText() + "' , '" + type + "')");
                     register_status_label.setText("Email ID has been Registered!");
-                    db.getStatement().executeUpdate("Insert into StudentEntry(LINK_ID) Values (" + findID(db,email_register_textfield.getText()) + ")");
+                    db.getStatement().executeUpdate("Insert into StudentEntry(LINK_ID) Values (" + findID(db, email_register_textfield.getText()) + ")");
                     Stage stage = (Stage) register_password.getScene().getWindow();
                     stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/LoginFXML.fxml"))));
                 } else {
@@ -52,12 +54,15 @@ public class RegisterFXMLController {
         }
     }
 
-    public int findID(DataBaseHelper db,String emailID) throws SQLException {
+    public int findID(DataBaseHelper db, String emailID) throws SQLException {
         StudentEntryFXMLController se = new StudentEntryFXMLController();
         se.createStudentEntryTable(db);
         ResultSet set = db.getStatement().executeQuery("SELECT ID FROM data where EmailID = '" + emailID + "'");
-        set.next();
-        return set.getInt(1);
+        if (set.next()) {
+            return set.getInt(1);
+        } else {
+            throw new SQLException("ResultSet returning false in findID method!");
+        }
     }
 
     public void createDataTable(DataBaseHelper db) throws SQLException {
@@ -69,9 +74,12 @@ public class RegisterFXMLController {
     public boolean checkIfEmailExists(DataBaseHelper db, String emailID) throws SQLException {
         ResultSet res = (db.getStatement().executeQuery("SELECT  COUNT(EmailID) from Data where "
                 + "EmailID = '" + emailID + "';"));
-        res.next();
-        int n = res.getInt(1);
-        return n != 0;
+        if (res.next()) {
+            int n = res.getInt(1);
+            return n != 0;
+        } else {
+            throw new SQLException("ResultSet returning false in checkIfEmailExists Method!");
+        }
     }
 
 }

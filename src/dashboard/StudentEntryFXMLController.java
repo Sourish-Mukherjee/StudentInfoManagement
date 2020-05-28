@@ -1,26 +1,26 @@
-package Dashboard;
+package dashboard;
 
-import Authentication.LoginController;
-import Authentication.RegisterFXMLController;
-import DataBase.DataBaseHelper;
+import authentication.LoginController;
+import authentication.RegisterFXMLController;
+import dataBase.DataBaseHelper;
 import java.sql.SQLException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 
 public class StudentEntryFXMLController {
 
     @FXML
-    private Pane studentPane_DataEntry;
-    @FXML
-    private TextField name_stuEntry, usn_stuEntry, pho_stuEntry, branch_stuEntry, year_stuEntry;
+    private TextField name_stuEntry, 
+            usn_stuEntry, 
+            pho_stuEntry, 
+            branch_stuEntry, 
+            year_stuEntry;
     @FXML
     private Label label_stuEntry;
 
     @FXML
-    private void onSave(ActionEvent event) throws SQLException {
+    private void onSave() throws SQLException {
         DataBaseHelper db = new DataBaseHelper();
         createTableForStudentDetails(db);
         enterDataInStudentDetails(db);
@@ -50,7 +50,6 @@ public class StudentEntryFXMLController {
             return false;
         }
         try {
-            LoginController lc = new LoginController();
             db.getStatement().executeUpdate("UPDATE StudentEntry SET NAME = '" + name_stuEntry.getText() + "',USN ='"
                     + usn_stuEntry.getText() + "', BRANCH ='" + branch_stuEntry.getText() + "',PHONE='" + pho_stuEntry.getText()
                     + "', YEAR='" + year_stuEntry.getText() + "' WHERE LINK_ID=" + new RegisterFXMLController().findID(db, LoginController.getEmaiL()));

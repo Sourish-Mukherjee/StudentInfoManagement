@@ -1,6 +1,6 @@
 
 
-package Dashboard;
+package dashboard;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,7 +10,7 @@ public class StudentDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        //TO-DO Something
     }    
     
 }
