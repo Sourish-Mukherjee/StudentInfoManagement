@@ -1,7 +1,7 @@
 package authentication;
 
 import dashboard.StudentEntryFXMLController;
-import dataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,8 +25,7 @@ public class RegisterFXMLController {
     @FXML
     private Label register_status_label;
     @FXML
-    private CheckBox fac_checkBox,
-            stu_checkBox;
+    private CheckBox fac_checkBox;
 
     @FXML
     public void registerAccount(ActionEvent event) throws IOException {

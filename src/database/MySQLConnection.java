@@ -1,4 +1,4 @@
-package dataBase;
+package database;
 
 import java.sql.*;
 
@@ -15,13 +15,13 @@ public class MySQLConnection {
     protected MySQLConnection() {
     }
 
-    protected MySQLConnection(String databaseName) throws Exception {
+    protected MySQLConnection(String databaseName) {
         this("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3306/" + databaseName,
                 "root", "123456");
     }
 
     protected MySQLConnection(String driverName, String url, String userName,
-            String password) throws Exception {
+            String password) {
         this.driverName = driverName;
         this.url = url;
         this.userName = userName;
@@ -29,7 +29,7 @@ public class MySQLConnection {
         createConnection();
     }
 
-    protected final void createConnection() throws Exception {
+    protected final void createConnection() {
         Connection conn;
         try {
             Class.forName(driverName);
@@ -38,7 +38,7 @@ public class MySQLConnection {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Server Could Not Be Connected!");
             System.out.println(e.getMessage());
-            throw new Exception("Error in createConnection Method");
+
         }
     }
 

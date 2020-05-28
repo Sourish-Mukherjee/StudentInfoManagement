@@ -2,7 +2,7 @@ package dashboard;
 
 import authentication.LoginController;
 import authentication.RegisterFXMLController;
-import dataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -20,7 +20,7 @@ public class StudentEntryFXMLController {
     private Label label_stuEntry;
 
     @FXML
-    private void onSave() throws SQLException {
+    protected void onSave() throws SQLException {
         DataBaseHelper db = new DataBaseHelper();
         createTableForStudentDetails(db);
         enterDataInStudentDetails(db);
