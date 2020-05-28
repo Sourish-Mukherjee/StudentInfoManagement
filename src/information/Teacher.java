@@ -1,14 +1,16 @@
-package Information;
+package information;
 
 public class Teacher {
+
+    private String name,
+            branch,
+            role;
 
     public Teacher(String name, String branch, String role) {
         this.name = name;
         this.branch = branch;
         this.role = role;
     }
-
-    private String name, branch, role;
 
     public String getName() {
         return name;

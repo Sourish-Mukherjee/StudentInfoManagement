@@ -1,6 +1,6 @@
-package Authentication;
+package authentication;
 
-import DataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -32,10 +32,10 @@ public class LoginController implements Initializable {
     private Button register_button;
     @FXML
     private ComboBox comboBox_Login;
-    private static String emailTyped = "world";
+    private static String emailTyped = "";
 
     @FXML
-    public void generateNumber(ActionEvent event) throws IOException {
+    protected void generateNumber() throws IOException {
         emailTyped = emaiLTextbox.getText();
         try {
             DataBaseHelper db = new DataBaseHelper();
@@ -94,8 +94,11 @@ public class LoginController implements Initializable {
     private boolean findStudentEntryExists(DataBaseHelper db) throws SQLException {
         int n = new RegisterFXMLController().findID(db, emaiLTextbox.getText());
         ResultSet set = db.getStatement().executeQuery("Select Count(LINK_ID) from StudentEntry where LINK_ID=" + n + " AND USN IS NOT NULL");
-        set.next();
-        return set.getInt(1) == 1;
+        if (set.next()) {
+            return set.getInt(1) == 1;
+        } else {
+            throw new SQLException("Result Set returns false in findStudentEntryExists method");
+        }
     }
 
     @FXML
@@ -118,9 +121,12 @@ public class LoginController implements Initializable {
     private boolean checkType(DataBaseHelper db, String emailID, String type) throws SQLException {
         ResultSet set = db.getStatement().executeQuery("SELECT COUNT(Type) FROM DATA WHERE EmailID ='" + emailID + "'"
                 + "AND Type = '" + type + "';");
-        set.next();
-        int n = set.getInt(1);
-        return n != 0;
+        if (set.next()) {
+            int n = set.getInt(1);
+            return n != 0;
+        } else {
+            throw new SQLException("Result Set returning false in checkType method");
+        }
 
     }
 

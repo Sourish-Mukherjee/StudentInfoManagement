@@ -1,4 +1,4 @@
-package DataBase;
+package database;
 
 import java.sql.*;
 
@@ -10,7 +10,6 @@ public class MySQLConnection {
     private String password = "";
     private String tableName = "";
     private String databaseName = "";
-    private Connection conn = null;
     private Statement st = null;
 
     protected MySQLConnection() {
@@ -31,18 +30,15 @@ public class MySQLConnection {
     }
 
     protected final void createConnection() {
+        Connection conn;
         try {
             Class.forName(driverName);
             conn = DriverManager.getConnection(url, userName, password);
+            st = conn.createStatement();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Server Could Not Be Connected!");
             System.out.println(e.getMessage());
-        }
-        try {
-            st = conn.createStatement();
-        } catch (SQLException e) {
-            System.out.println("Statement Connection Failed!");
-            System.out.println(e.getMessage());
+
         }
     }
 
