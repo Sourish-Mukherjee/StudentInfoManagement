@@ -2,7 +2,7 @@ package dashboard;
 
 import authentication.LoginController;
 import authentication.RegisterFXMLController;
-import dataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

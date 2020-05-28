@@ -1,4 +1,4 @@
-package dataBase;
+package database;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,7 +9,7 @@ public class DataBaseHelper {
     private String tableName = "";
     private MySQLConnection mySQLConnection = new MySQLConnection(getDataBaseName());
 
-    public void createConnection() {
+    public void createConnection() throws Exception {
         mySQLConnection.createConnection();
     }
 

@@ -1,7 +1,7 @@
 package dashboard;
 
 import authentication.RegisterFXMLController;
-import dataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import information.Student;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -12,7 +12,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;

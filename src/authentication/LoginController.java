@@ -1,6 +1,6 @@
 package authentication;
 
-import dataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;

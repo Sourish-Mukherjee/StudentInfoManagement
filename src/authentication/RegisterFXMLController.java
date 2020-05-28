@@ -1,7 +1,7 @@
 package authentication;
 
 import dashboard.StudentEntryFXMLController;
-import dataBase.DataBaseHelper;
+import database.DataBaseHelper;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
