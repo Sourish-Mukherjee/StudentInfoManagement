@@ -1,0 +1,2 @@
+# StudentInfoManagement
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/efe14e28c01445feab5304e0e342aded)](https://app.codacy.com/manual/Sourish-Mukherjee/StudentInfoManagement?utm_source=github.com&utm_medium=referral&utm_content=Sourish-Mukherjee/StudentInfoManagement&utm_campaign=Badge_Grade_Settings)
