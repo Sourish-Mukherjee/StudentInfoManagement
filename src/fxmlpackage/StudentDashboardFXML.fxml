@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.StudentDashboardController">
    <children>
       <TextField id="stdash_nameTextField" fx:id="stdash_nameTextField" layoutX="224.0" layoutY="280.0" />
+      <Label id="stuDashEmail" fx:id="stuDashEmail" alignment="CENTER" layoutX="14.0" layoutY="30.0" prefHeight="13.0" prefWidth="122.0" text="Label" textFill="#da4e4e">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="stuDashName" fx:id="stuDashName" alignment="CENTER" contentDisplay="CENTER" layoutX="201.0" layoutY="30.0" prefHeight="17.0" prefWidth="195.0" text="Label" textAlignment="CENTER" textFill="#da4e4e">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="stuDashUSN" fx:id="stuDashUSN" alignment="CENTER" layoutX="452.0" layoutY="30.0" prefHeight="17.0" prefWidth="129.0" text="Label" textFill="#da4e4e">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
