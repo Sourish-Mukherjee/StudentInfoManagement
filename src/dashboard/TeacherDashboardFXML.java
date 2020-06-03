@@ -48,7 +48,6 @@ public class TeacherDashboardFXML implements Initializable {
     private void setDetailsOnScreen() throws SQLException {
         String email = LoginController.getEmaiL();
         DataBaseHelper db = new DataBaseHelper();
-        System.out.println(email);
         int id = new RegisterFXMLController().findID(db, email);
         ResultSet set = db.getStatement().executeQuery("Select name from studententry where link_id = " + id);
         if (set.next()) {
@@ -61,12 +60,21 @@ public class TeacherDashboardFXML implements Initializable {
     }
 
     @FXML
-    private void openTeacherStudentInfo() throws IOException {
+    protected void openTeacherStudentInfo() throws IOException {
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/TeacherStudentInfoFXML.fxml"))));
         stage.show();
         stage.setTitle("Student-Information Panel");
         stage = (Stage) teaDashName.getScene().getWindow();
+        stage.close();
+    }
+    @FXML
+    protected void openTeacherMarks() throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/TeacherMarksFXML.fxml"))));
+        stage.show();
+        stage.setTitle("Student-Marks Portal");
+        stage = (Stage)teaDashName.getScene().getWindow();
         stage.close();
     }
 
