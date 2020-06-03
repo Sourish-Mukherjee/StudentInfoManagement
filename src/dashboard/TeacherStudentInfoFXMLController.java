@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class TeacherDashboardFXMLController implements Initializable {
+public class TeacherStudentInfoFXMLController implements Initializable {
 
     @FXML
     private TableView<Student> table_teacDashboard;

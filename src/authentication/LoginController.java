@@ -54,14 +54,14 @@ public class LoginController implements Initializable {
                         if (comboBox_Login.getSelectionModel().getSelectedItem().toString().equals("Student")) {
                             if (findStudentEntryExists(db)) {
                                 Stage stage = new Stage();
-                                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/StudentDashboardFXML.fxml"))));
+                                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/StudentDashboardFXML.fxml"))));
                                 stage.setTitle("Student Dashboard");
                                 stage.show();
                                 stage = (Stage) register_button.getScene().getWindow();
                                 stage.close();
                             } else {
                                 Stage stage = new Stage();
-                                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/StudentEntryFXML.fxml"))));
+                                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/StudentEntryFXML.fxml"))));
                                 stage.setTitle("Student Info Entry!");
                                 stage.show();
                                 stage = (Stage) register_button.getScene().getWindow();
@@ -69,7 +69,7 @@ public class LoginController implements Initializable {
                             }
                         } else {
                             Stage stage = new Stage();
-                            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/TeacherDashboardFXML.fxml"))));
+                            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/TeacherDashboardFXML.fxml"))));
                             stage.setTitle("Teacher Dashboard");
                             stage.show();
                             stage = (Stage) register_button.getScene().getWindow();
@@ -104,7 +104,7 @@ public class LoginController implements Initializable {
     @FXML
     public void createAccount(ActionEvent event) throws IOException {
         Stage stage = (Stage) register_button.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/RegisterFXML.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/RegisterFXML.fxml"))));
     }
 
     @Override
