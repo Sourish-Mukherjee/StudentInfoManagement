@@ -1,6 +1,5 @@
 package dashboard;
 
-import com.mysql.cj.protocol.Resultset;
 import database.DataBaseHelper;
 import information.InternalMarks;
 import javafx.collections.FXCollections;
@@ -15,7 +14,6 @@ import java.sql.ResultSet;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 public class TeacherMarksController implements Initializable {
 

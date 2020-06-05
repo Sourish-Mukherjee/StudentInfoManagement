@@ -45,6 +45,9 @@ public class StudentEntryFXMLController {
                 "IAT1 INT DEFAULT 0, IAT2 INT DEFAULT 0 , IAT3 INT DEFAULT 0, TOTAL " +
                 "INT DEFAULT 0 , AVERAGE DECIMAL(4,2) DEFAULT 0, LINK_ID INT," +
                 " FOREIGN KEY(LINK_ID) REFERENCES studententry(LINK_ID)");
+        db.createTable("Attendance", "ID INT PRIMARY KEY AUTO_INCREMENT, CurrEng INT Default 0," +
+                " TotalEng INT Default 0, CurrMaths INT Default 0, TotalMaths INT Default 0, CurrSci INT Default 0," +
+                " TotalSci INT Default 0, LINK_ID INT, FOREIGN KEY(LINK_ID) REFERENCES STUDENTENTRY(LINK_ID)");
 
     }
 
@@ -60,6 +63,7 @@ public class StudentEntryFXMLController {
                     + usn_stuEntry.getText() + "', BRANCH ='" + branch_stuEntry.getText() + "',PHONE='" + pho_stuEntry.getText()
                     + "', YEAR='" + year_stuEntry.getText() + "' WHERE LINK_ID=" + new RegisterFXMLController().findID(db, LoginController.getEmaiL()));
             db.getStatement().executeUpdate("Insert into InternalMarksTable(Link_ID) values(" + new RegisterFXMLController().findID(db, LoginController.getEmaiL()) + ");");
+            db.getStatement().executeUpdate("Insert into Attendance(Link_ID) values(" + new RegisterFXMLController().findID(db, LoginController.getEmaiL()) + ");");
         } catch (SQLException ex) {
             System.out.println(ex);
             label_stuEntry.setText("Could Not Store Data!");

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.ConfirmBox">
+   <children>
+      <Label layoutX="72.0" layoutY="40.0" text="English" />
+      <Label layoutX="284.0" layoutY="40.0" text="Maths" />
+      <Label layoutX="461.0" layoutY="40.0" text="Science" />
+      <ComboBox id="confrimEng" fx:id="confrimEng" layoutX="46.0" layoutY="151.0" prefWidth="150.0" />
+      <ComboBox id="confrimMaths" fx:id="confrimMaths" layoutX="236.0" layoutY="151.0" prefWidth="150.0" />
+      <ComboBox id="confrimScience" fx:id="confrimScience" layoutX="414.0" layoutY="151.0" prefWidth="150.0" />
+      <Button id="confirmDone" fx:id="confirmDone" layoutX="278.0" layoutY="257.0" mnemonicParsing="false" onAction="#updateAttendance" text="Done" />
+   </children>
+</AnchorPane>
