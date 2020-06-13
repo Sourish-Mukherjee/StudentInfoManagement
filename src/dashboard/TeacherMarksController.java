@@ -103,8 +103,8 @@ public class TeacherMarksController implements Initializable {
             updateIAT1.setText(String.valueOf(internalMarks.getIat1()));
             updateIAT2.setText(String.valueOf(internalMarks.getIat2()));
             updateIAT3.setText(String.valueOf(internalMarks.getIat3()));
-            updateTotal.setText(String.valueOf("Old Total = "+internalMarks.getTotal()));
-            updateAvg.setText(String.valueOf("Old Average ="+internalMarks.getAvg()));
+            updateTotal.setText(String.valueOf("Old Total = " + internalMarks.getTotal()));
+            updateAvg.setText(String.valueOf("Old Average =" + internalMarks.getAvg()));
         }
     }
 
@@ -139,8 +139,8 @@ public class TeacherMarksController implements Initializable {
         }
     }
 
-    private int findUSNID(DataBaseHelper db, String usn) throws SQLException {
-        ResultSet set = db.getStatement().executeQuery("Select Link_ID from studententry where usn ='" + usn+"';");
+    protected int findUSNID(DataBaseHelper db, String usn) throws SQLException {
+        ResultSet set = db.getStatement().executeQuery("Select Link_ID from studententry where usn ='" + usn + "';");
         if (set.next())
             return set.getInt(1);
         return -1;

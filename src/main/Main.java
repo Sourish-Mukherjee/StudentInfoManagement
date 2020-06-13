@@ -25,12 +25,4 @@ public class Main extends Application {
         launch(args);
     }
 
-    public Stage getWindow() {
-        return window;
-    }
-
-    public void setWindow(Stage window) {
-        this.window = window;
-    }
-
 }

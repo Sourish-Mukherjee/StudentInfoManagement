@@ -1,24 +1,21 @@
 package information;
 
-import dashboard.ConfirmBox;
-import dashboard.TeaherAttendanceFXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
+import javafx.scene.control.ComboBox;
+
 
 public class Attendance {
 
     private String name;
     private String usn;
-    private int currEng;
+    private ComboBox currEng;
     private int totalEng;
-    private int currMaths;
+    private ComboBox currMaths;
     private int totalMaths;
-    private int currScience;
+    private ComboBox currScience;
     private int totalScience;
-    private Button button;
-    protected static int row;
-    public Attendance(String name, String usn, int currEng, int totalEng, int currMaths,
-                      int totalMaths, int currScience, int totalScience, Button button) {
+
+    public Attendance(String name, String usn, ComboBox currEng, int totalEng, ComboBox currMaths,
+                      int totalMaths, ComboBox currScience, int totalScience) {
         this.name = name;
         this.usn = usn;
         this.currEng = currEng;
@@ -27,21 +24,17 @@ public class Attendance {
         this.totalMaths = totalMaths;
         this.currScience = currScience;
         this.totalScience = totalScience;
-        this.button = button;
-        button.setOnAction(e -> {
-            new ConfirmBox().display();
-            //System.out.println(TeaherAttendanceFXML.getTableAttend().getSelectionModel().getSelectedItem().getName());
-        });
     }
 
     public String getUsn() {
         return usn;
     }
+
     public String getName() {
         return name;
     }
 
-    public int getCurrEng() {
+    public ComboBox getCurrEng() {
         return currEng;
     }
 
@@ -49,7 +42,7 @@ public class Attendance {
         return totalEng;
     }
 
-    public int getCurrMaths() {
+    public ComboBox getCurrMaths() {
         return currMaths;
     }
 
@@ -57,7 +50,7 @@ public class Attendance {
         return totalMaths;
     }
 
-    public int getCurrScience() {
+    public ComboBox getCurrScience() {
         return currScience;
     }
 
@@ -65,7 +58,4 @@ public class Attendance {
         return totalScience;
     }
 
-    public Button getButton() {
-        return button;
-    }
 }

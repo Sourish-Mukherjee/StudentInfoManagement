@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.TeaherAttendanceFXML">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.TeaherAttendanceFXML">
    <children>
       <DatePicker id="teaAtDatePick" fx:id="teaAtDatePick" editable="false" layoutX="213.0" layoutY="18.0" onAction="#pickDate" promptText="Pick A Date" />
-      <TableView id="tableAttend" fx:id="tableAttend" layoutX="10.0" layoutY="65.0" prefHeight="217.0" prefWidth="578.0">
+      <TableView id="tableAttend" fx:id="tableAttend" layoutX="40.0" layoutY="67.0" prefHeight="250.0" prefWidth="520.0">
         <columns>
           <TableColumn id="tableName" fx:id="tableName" prefWidth="129.0" text="Name" />
-          <TableColumn id="tableUSN" fx:id="tableUSN" prefWidth="98.0" text="USN" />
-            <TableColumn id="tableEng" fx:id="tableEng" prefWidth="82.0" text="English" />
-            <TableColumn id="tableMat" fx:id="tableMat" text="Maths" />
-            <TableColumn id="tableSci" fx:id="tableSci" prefWidth="89.0" text="Science" />
-            <TableColumn id="tableOption" fx:id="tableOption" prefWidth="99.0" text="Option" />
+          <TableColumn id="tableUSN" fx:id="tableUSN" prefWidth="117.5999755859375" text="USN" />
+            <TableColumn id="tableEng" fx:id="tableEng" prefWidth="88.79998779296875" text="English" />
+            <TableColumn id="tableMat" fx:id="tableMat" prefWidth="76.0" text="Maths" />
+            <TableColumn id="tableSci" fx:id="tableSci" prefWidth="107.20001220703125" text="Science" />
         </columns>
       </TableView>
+      <Button id="attenDone" fx:id="attenDone" layoutX="254.0" layoutY="345.0" mnemonicParsing="false" onAction="#doneMethod" prefHeight="26.0" prefWidth="96.0" text="Done" />
    </children>
 </AnchorPane>
