@@ -47,7 +47,7 @@ public class StudentEntryFXMLController {
                 " FOREIGN KEY(LINK_ID) REFERENCES studententry(LINK_ID)");
         db.createTable("Attendance", "ID INT PRIMARY KEY AUTO_INCREMENT, CurrEng INT Default 0," +
                 " TotalEng INT Default 0, CurrMaths INT Default 0, TotalMaths INT Default 0, CurrSci INT Default 0," +
-                " TotalSci INT Default 0, LINK_ID INT, FOREIGN KEY(LINK_ID) REFERENCES STUDENTENTRY(LINK_ID)");
+                " TotalSci INT Default 0, LINK_ID INT, Date DATE, FOREIGN KEY(LINK_ID) REFERENCES STUDENTENTRY(LINK_ID)");
 
     }
 

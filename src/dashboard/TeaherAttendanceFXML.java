@@ -9,10 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javax.xml.crypto.Data;
 import java.sql.ResultSet;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class TeaherAttendanceFXML implements Initializable {
@@ -52,7 +52,7 @@ public class TeaherAttendanceFXML implements Initializable {
             db.useDataBase("registerportal");
             ResultSet set = db.getStatement().executeQuery("Select name, usn,currEng,totalEng,currMaths," +
                     "totalMaths,currSci,totalSci from studententry,attendance " +
-                    "where attendance.link_id = studententry.link_id;");
+                    "where attendance.link_id = studententry.link_id GROUP BY attendance.link_id;");
             while (set.next())
                 list.add(new Attendance(set.getString(1), set.getString(2), new ComboBox<>(CHOICE)
                         , set.getInt(4), new ComboBox<>(CHOICE), set.getInt(6), new ComboBox<>(CHOICE),
@@ -71,9 +71,11 @@ public class TeaherAttendanceFXML implements Initializable {
 
 
     @FXML
-    protected void pickDate() {
-        //TO-DO Later
+    protected String pickDate() {
+        LocalDate ld = teaAtDatePick.getValue();
+        return ld.toString();
     }
+
 
     @FXML
     protected void doneMethod() {
@@ -86,26 +88,38 @@ public class TeaherAttendanceFXML implements Initializable {
                 String valueSci = attend.getCurrScience().getSelectionModel().getSelectedItem().toString();
                 String usn = attend.getUsn();
                 int findID = new TeacherMarksController().findUSNID(db, usn);
-                updateAttendance(db, findID, valueEng, valueMath, valueSci);
+                String date = pickDate();
+                updateAttendance(db, findID, valueEng, valueMath, valueSci, date);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void updateAttendance(DataBaseHelper db, int id, String eng, String math, String sci) {
+    private void updateAttendance(DataBaseHelper db, int id, String eng, String math, String sci, String date) {
         try {
-            System.out.println(id);
-            ResultSet set = db.getStatement().executeQuery("select totaleng,totalmaths,totalsci from " +
-                    "studententry,attendance where studententry.link_id = attendance.link_id;");
-            if (set.next()) {
-                int totalEng = (eng.equals("YES") ? 1 : 0) + set.getInt(1);
-                int totalMat = (math.equals("YES") ? 1 : 0) + set.getInt(2);
-                int totalSci = (sci.equals("YES") ? 1 : 0) + set.getInt(3);
-                db.getStatement().executeUpdate("update attendance set totaleng = " + totalEng +
-                        ",totalmaths = " + totalMat + ",totalsci = " + totalSci + " where link_id =" + id);
+            ResultSet count = db.getStatement().executeQuery("Select COUNT(date) from attendance where  date = '" + date
+                    + "' AND attendance.link_id=" + id);
+            if (count.next()) {
+                int currEng = ("1".equals(eng) ? 1 : 0);
+                int currMat = ("1".equals(math) ? 1 : 0);
+                int currSci = ("1".equals(sci) ? 1 : 0);
+                int val = count.getInt(1);
+                if (val != 0) {
+                    ResultSet set = db.getStatement().executeQuery("select CurrEng,CurrMaths,CurrSci from " +
+                            "studententry,attendance where attendance.link_id = " + id);
+                    if (set.next()) {
+                        db.getStatement().executeUpdate("update attendance set CurrEng = " + currEng +
+                                ",CurrMaths = " + currMat + ",CurrSci = " + currSci + " where link_id =" + id + " " +
+                                "AND Date = '" + date + "';");
+                    } else
+                        throw new SQLException("ResultSet - False, updateAttendance");
+                } else {
+                    db.getStatement().executeUpdate("insert into attendance(CurrEng,CurrMaths,CurrSci,date,link_id) " +
+                            "values(" + currEng + ", " + currMat + ", " + currSci + ",' " + date + "', " + id + ")");
+                }
             } else
-                throw new SQLException("ResultSet - False, updateAttendance");
+                throw new SQLException("Result-Set False updateAttendance");
         } catch (SQLException e) {
             e.printStackTrace();
         }

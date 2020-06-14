@@ -65,8 +65,6 @@ public class TeacherDashboardFXML implements Initializable {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/TeacherStudentInfoFXML.fxml"))));
         stage.show();
         stage.setTitle("Student-Information Panel");
-        //stage = (Stage) teaDashName.getScene().getWindow();
-        //stage.close();
     }
 
     @FXML
@@ -75,8 +73,6 @@ public class TeacherDashboardFXML implements Initializable {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/TeacherMarksFXML.fxml"))));
         stage.show();
         stage.setTitle("Student-Marks Portal");
-        //stage = (Stage) teaDashName.getScene().getWindow();
-        //stage.close();
     }
 
     @FXML
