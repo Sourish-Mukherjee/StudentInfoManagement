@@ -101,9 +101,9 @@ public class TeaherAttendanceFXML implements Initializable {
             ResultSet count = db.getStatement().executeQuery("Select COUNT(date) from attendance where  date = '" + date
                     + "' AND attendance.link_id=" + id);
             if (count.next()) {
-                int currEng = ("1".equals(eng) ? 1 : 0);
-                int currMat = ("1".equals(math) ? 1 : 0);
-                int currSci = ("1".equals(sci) ? 1 : 0);
+                int currEng = ("YES".equals(eng) ? 1 : 0);
+                int currMat = ("YES".equals(math) ? 1 : 0);
+                int currSci = ("YES".equals(sci) ? 1 : 0);
                 int val = count.getInt(1);
                 if (val != 0) {
                     ResultSet set = db.getStatement().executeQuery("select CurrEng,CurrMaths,CurrSci from " +
@@ -115,11 +115,12 @@ public class TeaherAttendanceFXML implements Initializable {
                     } else
                         throw new SQLException("ResultSet - False, updateAttendance");
                 } else {
-                    db.getStatement().executeUpdate("insert into attendance(CurrEng,CurrMaths,CurrSci,date,link_id) " +
+                    System.out.println("OK");
+                    db.getStatement().executeUpdate("Insert into attendance(CurrEng,CurrMaths,CurrSci,date,link_id) " +
                             "values(" + currEng + ", " + currMat + ", " + currSci + ",' " + date + "', " + id + ")");
                 }
             } else
-                throw new SQLException("Result-Set False updateAttendance");
+                throw new SQLException("ResultSet - False updateAttendance");
         } catch (SQLException e) {
             e.printStackTrace();
         }

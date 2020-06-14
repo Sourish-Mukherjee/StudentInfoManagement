@@ -5,7 +5,6 @@ package dashboard;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -63,12 +62,19 @@ public class StudentDashboardController implements Initializable {
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/StudentMarksFXML.fxml")));
         Stage stage = new Stage();
         stage.setScene(scene);
+        stage.setTitle("Marks Portal");
         stage.setResizable(false);
         stage.show();
     }
 
     @FXML
-    protected void checkAttend() {
+    protected void checkAttend()throws IOException {
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/StudentAttendanceFXML.fxml")));
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Attendance Portal");
+        stage.show();
     }
 
 }

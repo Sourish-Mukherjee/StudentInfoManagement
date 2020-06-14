@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.StudentAttendanceController">
+   <children>
+      <DatePicker id="datePicker" fx:id="datePicker" layoutX="213.0" layoutY="99.0" onAction="#pickDate" />
+      <Label layoutX="73.0" layoutY="215.0" prefHeight="18.0" prefWidth="40.0" text="English" />
+      <Label layoutX="266.0" layoutY="215.0" text="Mathematics" />
+      <Label layoutX="474.0" layoutY="215.0" text="Science" />
+      <Label id="mathAttend" fx:id="mathAttend" alignment="CENTER" layoutX="234.0" layoutY="262.0" prefHeight="18.0" prefWidth="132.0" text="Label" />
+      <Label id="engAttend" fx:id="engAttend" alignment="CENTER" layoutX="27.0" layoutY="262.0" prefHeight="18.0" prefWidth="132.0" text="Label" />
+      <Label id="sciAttend" fx:id="sciAttend" alignment="CENTER" layoutX="434.0" layoutY="263.0" prefHeight="18.0" prefWidth="132.0" text="Label" />
+   </children>
+</AnchorPane>
