@@ -13,20 +13,18 @@
 
 .table-view .table-cell { -fx-text-fill: white; }
 
-.table-row-cell{
+.table-row-cell {
   -fx-background-color: -fx-table-cell-border-color, #616161;
   -fx-background-insets: 0, 0 0 1 0;
-  -fx-padding: 0.0em;
 }
 
-.table-row-cell:odd{
+.table-row-cell:odd {
   -fx-background-color: -fx-table-cell-border-color, #424242;
   -fx-background-insets: 0, 0 0 1 0;
-  -fx-padding: 0.0em;
 }
 
 .table-row-cell:selected {
-  -fx-background-color: #003366;
+  -fx-background-color: #036;
   -fx-background-insets: 0;
   -fx-background-radius: 1;
 }
