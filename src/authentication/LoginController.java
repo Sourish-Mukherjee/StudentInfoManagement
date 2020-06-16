@@ -77,7 +77,9 @@ public class LoginController implements Initializable {
                             }
                         } else {
                             Stage stage = new Stage();
-                            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/TeacherDashboardFXML.fxml"))));
+                            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlpackage/TeacherDashboardFXML.fxml")));
+                            stage.setScene(scene);
+                            scene.getStylesheets().add(getClass().getResource("/cssPackage/teacherdashboardfxml.css").toExternalForm());
                             stage.setTitle("Teacher Dashboard");
                             stage.show();
                             stage = (Stage) register_button.getScene().getWindow();

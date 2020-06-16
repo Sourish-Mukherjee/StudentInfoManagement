@@ -1,7 +1,36 @@
-/*
- * Empty Stylesheet file.
- */
+.root { -fx-background-color: linear-gradient(to bottom, #3cf 0%, #003366 100%); }
 
-.mainFxmlClass {
-  /* To-DO */
+#teaDashAttendance {
+  -fx-background-color: #ff5349;
+  -fx-background-radius: 10;
+  -fx-background-insets: 0;
+  -fx-text-fill: white;
+  -fx-padding: 5 5 5 5;
+  -fx-font-size: 1.2em;
+  -fx-font-weight: bold;
+}
+
+#teaDashInfo {
+  -fx-background-color: #ff5349;
+  -fx-background-radius: 10;
+  -fx-background-insets: 0;
+  -fx-text-fill: white;
+  -fx-padding: 5 5 5 5;
+  -fx-font-size: 1.2em;
+  -fx-font-weight: bold;
+}
+
+#teaDashMarks {
+  -fx-background-color: #ff5349;
+  -fx-background-radius: 10;
+  -fx-background-insets: 0;
+  -fx-text-fill: white;
+  -fx-padding: 5 5 5 5;
+  -fx-font-size: 1.2em;
+  -fx-font-weight: bold;
+}
+
+#teaDashMarks:hover {
+  -fx-background-color: #ff5349;
+  -fx-scale-y: 1.1;
 }
