@@ -43,10 +43,10 @@ public class StudentMarksController implements Initializable {
             ResultSet set = db.getStatement().executeQuery("Select Iat1,Iat2,Iat3,Total from internalmarkstable" +
                     " where link_id =" + findID);
             if (set.next()) {
-                stuMarksIAT1.setText("IAT 1 : " + set.getInt(1));
-                stuMarksIAT2.setText("IAT 2 : " + set.getInt(2));
-                stuMarksIAT3.setText("IAT 3 : " + set.getInt(3));
-                stuMarksTotal.setText("Total : " + set.getInt(4));
+                stuMarksIAT1.setText(""+set.getInt(1));
+                stuMarksIAT2.setText("" + set.getInt(2));
+                stuMarksIAT3.setText("" + set.getInt(3));
+                stuMarksTotal.setText("" + set.getInt(4));
                 ResultSet rest = db.getStatement().executeQuery("Select Count(Total) from internalmarkstable" +
                         " where total >" + set.getInt(4));
                 if (rest.next()) {

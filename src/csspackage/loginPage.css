@@ -11,7 +11,8 @@
 }
 
 #button:hover {
-  -fx-background-color: #ff5349;
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff5349;
   -fx-scale-y: 1.1;
 }
 
@@ -26,11 +27,15 @@
 }
 
 #register_button:hover {
-  -fx-background-color: #ff5349;
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff5349;
   -fx-scale-y: 1.1;
 }
 
-#comboBox_Login { -fx-background-color: #fff; }
+#comboBox_Login {
+  -fx-background-color: #fff;
+  -fx-background-radius: 10;
+}
 
 #emaiLTextbox {
   -fx-background-color: #fff;

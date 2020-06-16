@@ -2,20 +2,29 @@ package authentication;
 
 import dashboard.StudentEntryFXMLController;
 import database.DataBaseHelper;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class RegisterFXMLController {
+public class RegisterFXMLController implements Initializable {
 
     @FXML
     private TextField email_register_textfield;
@@ -26,6 +35,18 @@ public class RegisterFXMLController {
     private Label register_status_label;
     @FXML
     private CheckBox fac_checkBox;
+    @FXML
+    private ImageView imageView;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            imageView.setImage(new Image(new FileInputStream("E:\\Java\\Projects\\StudentInfoManagement\\" +
+                    "resources\\images\\register_icon.png")));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void registerAccount(ActionEvent event) throws IOException {

@@ -2,24 +2,33 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.TeacherDashboardFXML">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../csspackage/teacherdashboardfxml.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.TeacherDashboardFXML">
    <children>
-      <Button id="teaDashAttendance" fx:id="teaDashAttendance" layoutX="46.0" layoutY="297.0" mnemonicParsing="false" onAction="#openTeacherAttend" prefHeight="25.0" prefWidth="100.0" text="Attendance" />
-      <Button id="teaDashInfo" fx:id="teaDashInfo" layoutX="442.0" layoutY="297.0" mnemonicParsing="false" onAction="#openTeacherStudentInfo" prefHeight="25.0" prefWidth="100.0" stylesheets="@../csspackage/teacherdashboardfxml.css" text="Information" />
-      <Button id="teaDashMarks" fx:id="teaDashMarks" layoutX="250.0" layoutY="343.0" mnemonicParsing="false" onAction="#openTeacherMarks" prefHeight="25.0" prefWidth="100.0" text="Marks" />
-      <Label id="teaDashEmail" fx:id="teaDashEmail" alignment="CENTER" layoutX="19.0" layoutY="38.0" prefHeight="17.0" prefWidth="155.0" text="Label">
+      <Button id="teaDashAttendance" fx:id="teaDashAttendance" layoutX="459.0" layoutY="215.0" mnemonicParsing="false" onAction="#openTeacherAttend" prefHeight="25.0" prefWidth="100.0" text="Attendance" />
+      <Button id="teaDashInfo" fx:id="teaDashInfo" layoutX="359.0" layoutY="284.0" mnemonicParsing="false" onAction="#openTeacherStudentInfo" prefHeight="25.0" prefWidth="100.0" stylesheets="@../csspackage/teacherdashboardfxml.css" text="Information" />
+      <Button id="teaDashMarks" fx:id="teaDashMarks" layoutX="263.0" layoutY="215.0" mnemonicParsing="false" onAction="#openTeacherMarks" prefHeight="25.0" prefWidth="100.0" text="Marks" />
+      <Label alignment="CENTER" layoutX="300.0" layoutY="83.0" prefHeight="71.0" prefWidth="218.0" text="DASHBOARD" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label id="teaDashName" fx:id="teaDashName" alignment="CENTER" layoutX="403.0" layoutY="38.0" prefHeight="17.0" prefWidth="178.0" text="Label">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="217.0" layoutY="129.0" prefHeight="71.0" prefWidth="167.0" text="TEACHER DASHBOARD" textAlignment="CENTER" />
+            <Font name="Arial Bold" size="28.0" />
+         </font></Label>
+      <Pane id="pane" fx:id="pane" prefHeight="400.0" prefWidth="242.0">
+         <children>
+            <Label id="teaDashEmail" fx:id="teaDashEmail" alignment="CENTER" layoutX="12.0" layoutY="310.0" prefHeight="32.0" prefWidth="218.0" text="Label">
+               <font>
+                  <Font name="Arial Bold" size="21.0" />
+               </font>
+            </Label>
+            <ImageView id="imageView" fx:id="imageView" fitHeight="200.0" fitWidth="240.0" layoutX="34.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/teacher_dashboard_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </Pane>

@@ -51,7 +51,7 @@ public class StudentDashboardController implements Initializable {
         }
         stuDashEmail.setText(loggedEmail);
         try {
-            stuDashImage.setImage(new Image(new FileInputStream("E:\\Java\\Projects\\StudentInfoManagement\\icon.jpg")));
+            stuDashImage.setImage(new Image(new FileInputStream("E:\\Java\\Projects\\StudentInfoManagement\\resources\\images\\student_dashboard_icon.png")));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

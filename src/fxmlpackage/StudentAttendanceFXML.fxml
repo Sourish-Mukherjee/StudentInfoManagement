@@ -3,16 +3,44 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.StudentAttendanceController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../csspackage/studentMarks.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.StudentAttendanceController">
    <children>
-      <DatePicker id="datePicker" fx:id="datePicker" layoutX="213.0" layoutY="99.0" onAction="#pickDate" />
-      <Label layoutX="73.0" layoutY="215.0" prefHeight="18.0" prefWidth="40.0" text="English" />
-      <Label layoutX="266.0" layoutY="215.0" text="Mathematics" />
-      <Label layoutX="474.0" layoutY="215.0" text="Science" />
-      <Label id="mathAttend" fx:id="mathAttend" alignment="CENTER" layoutX="234.0" layoutY="262.0" prefHeight="18.0" prefWidth="132.0" text="Label" />
-      <Label id="engAttend" fx:id="engAttend" alignment="CENTER" layoutX="27.0" layoutY="262.0" prefHeight="18.0" prefWidth="132.0" text="Label" />
-      <Label id="sciAttend" fx:id="sciAttend" alignment="CENTER" layoutX="434.0" layoutY="263.0" prefHeight="18.0" prefWidth="132.0" text="Label" />
+      <DatePicker id="datePicker" fx:id="datePicker" layoutX="212.0" layoutY="137.0" onAction="#pickDate" />
+      <Label alignment="CENTER" layoutX="51.0" layoutY="215.0" prefHeight="22.0" prefWidth="92.0" text="English" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="245.0" layoutY="215.0" text="Mathematics" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="466.0" layoutY="215.0" text="Science" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font></Label>
+      <Label id="mathAttend" fx:id="mathAttend" alignment="CENTER" layoutX="223.0" layoutY="261.0" prefHeight="18.0" prefWidth="132.0" text="---" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font></Label>
+      <Label id="engAttend" fx:id="engAttend" alignment="CENTER" layoutX="27.0" layoutY="262.0" prefHeight="18.0" prefWidth="132.0" text="---" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label id="sciAttend" fx:id="sciAttend" alignment="CENTER" layoutX="434.0" layoutY="263.0" prefHeight="18.0" prefWidth="132.0" text="---" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="175.0" layoutY="14.0" prefHeight="50.0" prefWidth="258.0" text="Attendance" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="272.0" layoutY="64.0" text="Panel" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

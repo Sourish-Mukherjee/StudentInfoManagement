@@ -5,20 +5,41 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="authentication.RegisterFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../csspackage/registerfxml.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="authentication.RegisterFXMLController">
     
     <children>
-        <Label alignment="CENTER" layoutX="196.0" layoutY="122.0" prefHeight="15.0" prefWidth="80.0" text="Email ID:" textAlignment="CENTER" />
-        <Label layoutX="204.0" layoutY="175.0" text="Password:" />
-        <Label layoutX="195.0" layoutY="236.0" text="Re-Password:" />
-        <TextField id="email_register_textfield" fx:id="email_register_textfield" layoutX="300.0" layoutY="109.0" />
-        <Button layoutX="295.0" layoutY="314.0" mnemonicParsing="false" onAction="#registerAccount" prefHeight="32.0" prefWidth="152.0" text="Register" />
-        <PasswordField id="register_password" fx:id="register_password" layoutX="300.0" layoutY="171.0" prefHeight="26.0" prefWidth="152.0" />
-        <PasswordField id="register_repassword" fx:id="register_repassword" layoutX="303.0" layoutY="233.0" prefHeight="26.0" prefWidth="152.0" />
-        <Label id="register_status_label" fx:id="register_status_label" layoutX="24.0" layoutY="101.0" prefHeight="244.0" prefWidth="152.0" />
-      <CheckBox id="fac_checkBox" fx:id="fac_checkBox" layoutX="199.0" layoutY="58.0" mnemonicParsing="false" text="Faculty" />
-      <CheckBox id="stu_checkBox" fx:id="stu_checkBox" layoutX="371.0" layoutY="58.0" mnemonicParsing="false" text="Student" />
+        <TextField id="email_register_textfield" fx:id="email_register_textfield" alignment="CENTER" layoutX="325.0" layoutY="88.0" promptText="Enter Email ID" />
+        <Button layoutX="329.0" layoutY="313.0" mnemonicParsing="false" onAction="#registerAccount" prefHeight="32.0" prefWidth="152.0" text="Register" />
+        <PasswordField id="register_password" fx:id="register_password" alignment="CENTER" layoutX="325.0" layoutY="142.0" prefHeight="26.0" prefWidth="159.0" promptText="Enter Password" />
+        <PasswordField id="register_repassword" fx:id="register_repassword" alignment="CENTER" layoutX="325.0" layoutY="200.0" prefHeight="26.0" prefWidth="159.0" promptText="Re-Type Password" />
+        <Label id="register_status_label" fx:id="register_status_label" layoutX="24.0" layoutY="101.0" prefHeight="244.0" prefWidth="152.0" stylesheets="@../csspackage/loginPage.css" />
+      <CheckBox id="fac_checkBox" fx:id="fac_checkBox" layoutX="295.0" layoutY="257.0" mnemonicParsing="false" text="Faculty">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font></CheckBox>
+      <CheckBox id="stu_checkBox" fx:id="stu_checkBox" layoutX="452.0" layoutY="257.0" mnemonicParsing="false" text="Student">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font></CheckBox>
+      <ImageView id="imageView" fx:id="imageView" fitHeight="172.0" fitWidth="171.0" layoutX="39.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/register_icon.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="52.0" layoutY="256.0" text="Register" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="73.0" layoutY="308.0" text="Portal" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

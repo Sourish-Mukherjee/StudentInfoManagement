@@ -2,14 +2,54 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="258.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.StudentMarksController">
+<AnchorPane prefHeight="258.0" prefWidth="446.0" stylesheets="@../csspackage/studentMarks.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.StudentMarksController">
    <children>
-      <Label id="stuMarksIAT1" fx:id="stuMarksIAT1" alignment="CENTER" layoutX="45.0" layoutY="40.0" prefHeight="18.0" prefWidth="112.0" text="IAT 1 :" />
-      <Label id="stuMarksIAT2" fx:id="stuMarksIAT2" alignment="CENTER" layoutX="45.0" layoutY="120.0" prefHeight="18.0" prefWidth="112.0" text="IAT 2 :" />
-      <Label id="stuMarksIAT3" fx:id="stuMarksIAT3" alignment="CENTER" layoutX="45.0" layoutY="192.0" prefHeight="18.0" prefWidth="112.0" text="IAT 3 :" />
-      <Label id="stuMarksTotal" fx:id="stuMarksTotal" alignment="CENTER" layoutX="272.0" layoutY="70.0" prefHeight="18.0" prefWidth="68.0" text="TOTAL :" />
-      <Label id="stuMarksRank" fx:id="stuMarksRank" alignment="CENTER" layoutX="272.0" layoutY="157.0" prefHeight="18.0" prefWidth="68.0" text="RANK :" />
+      <Label id="stuMarksIAT1" fx:id="stuMarksIAT1" alignment="CENTER" layoutX="167.0" layoutY="70.0" prefHeight="18.0" prefWidth="112.0" text="---">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label id="stuMarksIAT2" fx:id="stuMarksIAT2" alignment="CENTER" layoutX="35.0" layoutY="70.0" prefHeight="18.0" prefWidth="112.0" text="---" textFill="#161616">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label id="stuMarksIAT3" fx:id="stuMarksIAT3" alignment="CENTER" layoutX="303.0" layoutY="70.0" prefHeight="18.0" prefWidth="112.0" text="---">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label id="stuMarksTotal" fx:id="stuMarksTotal" alignment="CENTER" layoutX="86.0" layoutY="181.0" prefHeight="18.0" prefWidth="68.0" text="---" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label id="stuMarksRank" fx:id="stuMarksRank" alignment="CENTER" layoutX="292.0" layoutY="181.0" prefHeight="18.0" prefWidth="68.0" text="---" textFill="#ff5349">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="44.0" layoutY="32.0" prefHeight="18.0" prefWidth="93.0" text="Internal 1" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="176.0" layoutY="32.0" prefHeight="18.0" prefWidth="93.0" text="Internal 2" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="312.0" layoutY="32.0" prefHeight="18.0" prefWidth="93.0" text="Internal 3" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="73.0" layoutY="139.0" prefHeight="18.0" prefWidth="93.0" text="Total Marks" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="279.0" layoutY="139.0" prefHeight="18.0" prefWidth="93.0" text="Class Rank" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
