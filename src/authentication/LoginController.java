@@ -1,11 +1,15 @@
 package authentication;
 
 import database.DataBaseHelper;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +22,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
@@ -31,7 +37,9 @@ public class LoginController implements Initializable {
     @FXML
     private Button register_button;
     @FXML
-    private ComboBox comboBox_Login;
+    private ComboBox<String> comboBox_Login;
+    @FXML
+    private ImageView imageView;
     private static String emailTyped = "";
 
     @FXML
@@ -109,11 +117,17 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            imageView.setImage(new Image(new FileInputStream("E:\\Java\\Projects\\StudentInfoManagement\\" +
+                    "resources\\images\\login_Page_Icon.png")));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         ObservableList<String> options
                 = FXCollections.observableArrayList(
-                        "Faculty",
-                        "Student"
-                );
+                "Faculty",
+                "Student"
+        );
         comboBox_Login.setItems(options);
         comboBox_Login.setValue("Select");
     }

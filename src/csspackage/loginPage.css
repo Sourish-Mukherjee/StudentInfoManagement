@@ -1,4 +1,4 @@
-.root { -fx-background-color: #6e7f80; }
+.root { -fx-background-color: linear-gradient(to bottom, #33ccff 0%, #003366 100%); }
 
 #button {
   -fx-background-color: #ff5349;
@@ -10,6 +10,16 @@
   -fx-font-weight: bold;
 }
 
+.button:hover {
+  -fx-background-color: #ff5349;
+  -fx-scale-y: 1.1;
+}
+
+.button:pressed {
+  -fx-scale-y: 0.9;
+  -fx-scale-x: 0.9;
+}
+
 #register_button {
   -fx-background-color: #ff5349;
   -fx-background-radius: 20;
@@ -18,4 +28,20 @@
   -fx-text-fill: white;
   -fx-font-size: 1.3em;
   -fx-font-weight: bold;
+}
+
+#comboBox_Login { -fx-background-color: #ffffff }
+
+#emaiLTextbox {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 6;
+  -fx-text-fill: rgb(105,105,105);
+  -fx-font-weight: bold;
+}
+
+#passtextBox {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 6;
+  -fx-font-weight: bold;
+  -fx-text-fill: rgb(105,105,105);
 }
