@@ -34,7 +34,6 @@
   -fx-scale-y: 1.1;
 }
 
-
 #teaDashMarks {
   -fx-background-color: #ff5349;
   -fx-background-radius: 10;
@@ -50,4 +49,3 @@
   -fx-text-fill: #ff5349;
   -fx-scale-y: 1.1;
 }
-

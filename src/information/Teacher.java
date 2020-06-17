@@ -1,5 +1,12 @@
 package information;
 
+/*
+    Author: Sourish Mukherjee
+    Link: https://github.com/Sourish-Mukherjee/StudentInfoManagement
+ */
+
+// UserDefined Variable , Type - Teacher ----> Stores information of teacher
+
 public class Teacher {
 
     private String name,

@@ -1,5 +1,13 @@
 package information;
 
+/*
+    Author: Sourish Mukherjee
+    Link: https://github.com/Sourish-Mukherjee/StudentInfoManagement
+ */
+
+// UserDefined Variable , Type - InternalMarks ----> Stores information of Internal Marks
+// of the students
+
 public class InternalMarks {
 
     private String name,

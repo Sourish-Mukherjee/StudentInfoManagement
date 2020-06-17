@@ -1,5 +1,10 @@
 package main;
 
+/*
+    Author: Sourish Mukherjee
+    Link: https://github.com/Sourish-Mukherjee/StudentInfoManagement
+ */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +13,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-
+    // Start Function for the Project <--- Application Loads
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent pr = FXMLLoader.load(getClass().getResource("/fxmlPackage/LoginFXML.fxml"));
@@ -20,6 +25,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    // Main Method for the entire project
     public static void main(String args[]) {
         launch(args);
     }

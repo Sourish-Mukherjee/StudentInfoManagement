@@ -2,6 +2,12 @@ package information;
 
 import javafx.scene.control.ComboBox;
 
+/*
+    Author: Sourish Mukherjee
+    Link: https://github.com/Sourish-Mukherjee/StudentInfoManagement
+ */
+
+// UserDefined Variable , Type - Attendance ----> Storesa attendance record of each student
 
 public class Attendance {
 

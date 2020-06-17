@@ -15,6 +15,13 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/*
+    Author: Sourish Mukherjee
+    Link: https://github.com/Sourish-Mukherjee/StudentInfoManagement
+ */
+
+// This class is the backend part of Marks Panel Dashboard Screen
+
 public class TeacherMarksController implements Initializable {
 
     @FXML
@@ -51,9 +58,6 @@ public class TeacherMarksController implements Initializable {
     private TextField updateIAT3;
 
     @FXML
-    private Button updateButton;
-
-    @FXML
     private Label updateTotal;
 
     @FXML
@@ -61,11 +65,13 @@ public class TeacherMarksController implements Initializable {
 
     private final ObservableList<InternalMarks> list = FXCollections.observableArrayList();
 
+    //Initializes the Screen as soon as it loads with the fillTable function
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fillTable();
     }
 
+    // Fills up the table present in the current window of Marks Panel window
     private void fillTable() {
         DataBaseHelper db = new DataBaseHelper();
         try {
@@ -97,6 +103,7 @@ public class TeacherMarksController implements Initializable {
 
     }
 
+    // After Double Clicking on any of the row this function gets called for editing the data
     private void onEdit() {
         if (teaStuMarksTable.getSelectionModel().getSelectedItem() != null) {
             InternalMarks internalMarks = teaStuMarksTable.getSelectionModel().getSelectedItem();
@@ -108,6 +115,7 @@ public class TeacherMarksController implements Initializable {
         }
     }
 
+    // After Clicking the Update button, necessary changes will be saved into the Database.
     @FXML
     protected void updateTable() {
         try {
@@ -139,6 +147,7 @@ public class TeacherMarksController implements Initializable {
         }
     }
 
+    //This function is used to the Link_ID foreign key value which has the desired usn from StudentEntry table
     protected int findUSNID(DataBaseHelper db, String usn) throws SQLException {
         ResultSet set = db.getStatement().executeQuery("Select Link_ID from studententry where usn ='" + usn + "';");
         if (set.next())

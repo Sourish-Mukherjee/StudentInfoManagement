@@ -16,12 +16,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/*
+    Author: Sourish Mukherjee
+    Link: https://github.com/Sourish-Mukherjee/StudentInfoManagement
+ */
+
+// This class is the backend part of Teacher Dashboard Screen
+
 public class TeacherDashboardFXML implements Initializable {
     @FXML
     private Label teaDashEmail;
-
-    @FXML
-    private Label teaDashName;
 
     @FXML
     private ImageView imageView;
@@ -39,6 +43,7 @@ public class TeacherDashboardFXML implements Initializable {
 
     }
 
+    // Opens The Information Screen panel after clicking the information button
     @FXML
     protected void openTeacherStudentInfo() throws IOException {
         Stage stage = new Stage();
@@ -47,6 +52,7 @@ public class TeacherDashboardFXML implements Initializable {
         stage.setTitle("Student-Information Panel");
     }
 
+    // Opens The Marks Screen panel after clicking the Marks button
     @FXML
     protected void openTeacherMarks() throws IOException {
         Stage stage = new Stage();
@@ -57,6 +63,7 @@ public class TeacherDashboardFXML implements Initializable {
         stage.setTitle("Student-Marks Portal");
     }
 
+    // Opens The Attendance Screen panel after clicking the Attendance button
     @FXML
     protected void openTeacherAttend() throws IOException {
         Stage stage = new Stage();
