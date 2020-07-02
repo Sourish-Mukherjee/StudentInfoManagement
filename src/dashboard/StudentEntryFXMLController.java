@@ -4,11 +4,15 @@ import authentication.LoginController;
 import authentication.RegisterFXMLController;
 import database.DataBaseHelper;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class StudentEntryFXMLController {
 
@@ -22,7 +26,7 @@ public class StudentEntryFXMLController {
     private Label label_stuEntry;
 
     @FXML
-    protected void onSave() throws SQLException {
+    protected void onSave() throws SQLException, IOException {
         DataBaseHelper db = new DataBaseHelper();
         createTableForStudentDetails(db);
         enterDataInStudentDetails(db);
@@ -51,7 +55,7 @@ public class StudentEntryFXMLController {
 
     }
 
-    private boolean enterDataInStudentDetails(DataBaseHelper db) {
+    private boolean enterDataInStudentDetails(DataBaseHelper db) throws IOException {
         try {
             db.useDataBase("RegisterPortal");
         } catch (SQLException ex) {
@@ -70,6 +74,13 @@ public class StudentEntryFXMLController {
             return false;
         }
         label_stuEntry.setText("Saved Data!");
+        Stage stage = (Stage) label_stuEntry.getScene().getWindow();
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxmlPackage/LoginFXML.fxml")));
+        stage.close();
+        stage.setScene(scene);
+        stage.setTitle("Login Portal!");
+        stage.setResizable(false);
+        stage.show();
         return true;
     }
 
